@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     public TMP_Text startButtonText;
     public TMP_Text quitButtonText;
     public TMP_Text helpButtonText;
+
+    //Pick a Job
+
+   
   
 
     // Start is called before the first frame update
@@ -31,12 +35,21 @@ public class UIManager : MonoBehaviour
         Application.Quit(); //quit game
     }
 
-    public void StartButton() //Start Button - loads lvl.1 
+    public void StartButton() //Start Button - Job Selection Menu
     {
           StartCoroutine(FlashTextColor(startButtonText));
-          SceneManager.LoadScene("Level One");
+          SceneManager.LoadScene("Pick a Job");
     }
-
+    public void NextButton() //Go to next scene
+    {
+          StartCoroutine(FlashTextColor(startButtonText));
+          
+          for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+          {
+              int currentSceneNum = i;
+              SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+          }    
+    }
     public void RestartButton() //Restart Button
     {
         Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
@@ -52,6 +65,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("HELP");
     }
 
+    //void PlayerChoices()
 
     IEnumerator FlashTextColor(TMP_Text buttonTextName) //change the text color to green for 2.5 seconds then switch scene
     {

@@ -460,8 +460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -102.4656, y: 23.7258}
-  m_SizeDelta: {x: 564.7266, y: 22.1273}
+  m_AnchoredPosition: {x: -66.0658, y: 20}
+  m_SizeDelta: {x: 637.5262, y: 34.789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735697717
 MonoBehaviour:
@@ -483,10 +483,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Creators...Janelle Anokye...Charlotte Bates...and Shaniah Taylor.
+  m_text: 'Game Creators: Janelle Anokye, Charlotte Bates, and Shaniah Taylor'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
-  m_sharedMaterial: {fileID: -2817590057954870685, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
+  m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -510,8 +510,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -752,8 +752,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
-  m_sharedMaterial: {fileID: -2817590057954870685, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
+  m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1160,8 +1160,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
-  m_sharedMaterial: {fileID: -2817590057954870685, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
+  m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1294,8 +1294,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Help
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
-  m_sharedMaterial: {fileID: -2817590057954870685, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
+  m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1429,8 +1429,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Gross Pay vs Net Pay
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
-  m_sharedMaterial: {fileID: -2817590057954870685, guid: ab0697d4a1d7059439d190c0b8647433, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
+  m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
