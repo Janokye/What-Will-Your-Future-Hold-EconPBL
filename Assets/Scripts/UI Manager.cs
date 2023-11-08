@@ -6,6 +6,9 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    float startingmoney;
+    float money = startingmoney;
+
     Scene scene;
     public TMP_Text startButtonText;
     public TMP_Text quitButtonText;
