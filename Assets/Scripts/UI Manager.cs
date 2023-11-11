@@ -6,8 +6,12 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    float startingmoney;
-    float money = startingmoney;
+    /* public float startingMoney;
+       public float money = startingMoney; -------> Causes a syntax error: error CS0236: A field initializer cannot reference the non-static field, method, or property 'UIManager.startingMoney'
+    */
+
+    public float startingMoney; //Changed it to 2 separate variables for the meantime
+    public float money;
 
     Scene scene;
     public TMP_Text startButtonText;
