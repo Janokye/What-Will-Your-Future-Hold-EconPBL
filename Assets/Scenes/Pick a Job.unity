@@ -284,7 +284,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975592502}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: OnClickJobPharm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -417,7 +417,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975592502}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: OnClickJobElectrician
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -550,7 +550,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975592502}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: OnClickJobNurse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -683,7 +683,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975592502}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: OnClickJobStylist
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1261,7 +1261,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975592502}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: OnClickJobWelder
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2289,7 +2289,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1975592502}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NextButton
+        m_MethodName: OnClickJobGameArtist
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2366,6 +2366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8565a5aa952a9f64388fed1767153d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingMoney: 0
+  money: 0
   startButtonText: {fileID: 0}
   quitButtonText: {fileID: 0}
   helpButtonText: {fileID: 0}
