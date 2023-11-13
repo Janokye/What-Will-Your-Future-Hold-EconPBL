@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
         startingMoney = 77600.00f;
         money = startingMoney;
 
+        Debug.Log(money);
+
         StartCoroutine(FlashTextColor(startButtonText));
 
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
@@ -34,6 +36,8 @@ public class UIManager : MonoBehaviour
     {
         startingMoney = 49000.00f;
         money = startingMoney;
+
+        Debug.Log(money);
 
         StartCoroutine(FlashTextColor(startButtonText));
 
@@ -49,6 +53,8 @@ public class UIManager : MonoBehaviour
         startingMoney = 41000.00f;
         money = startingMoney;
 
+        Debug.Log(money);
+
         StartCoroutine(FlashTextColor(startButtonText));
 
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
@@ -62,6 +68,8 @@ public class UIManager : MonoBehaviour
     {
         startingMoney = 60000.00f;
         money = startingMoney;
+
+        Debug.Log(money);
 
         StartCoroutine(FlashTextColor(startButtonText));
 
@@ -77,6 +85,8 @@ public class UIManager : MonoBehaviour
         startingMoney = 33000.00f;
         money = startingMoney;
 
+        Debug.Log(money);
+
         StartCoroutine(FlashTextColor(startButtonText));
 
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
@@ -90,6 +100,8 @@ public class UIManager : MonoBehaviour
     {
         startingMoney = 110000.00f;
         money = startingMoney;
+
+        Debug.Log(money);
 
         StartCoroutine(FlashTextColor(startButtonText));
 
