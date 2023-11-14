@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     
     public float startingMoney; //Changed it to 2 separate variables for the meantime
     public float money;
+    float stateTax;
+    float 
 
     Scene scene;
     public TMP_Text startButtonText;
@@ -114,8 +116,70 @@ public class UIManager : MonoBehaviour
     }
     //=======================================================Jobs=======================================================
 
+    //=======================================================States=======================================================
+    public void OnClickNC()
+    {
+        stateTax = startingMoney * 0.058;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickFL()
+    {
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickCA()
+    {
+        stateTax = startingMoney * 0.123;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickNY()
+    {
+        stateTax = startingMoney * 0.109;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickGA()
+    {
+        stateTax = startingMoney * 0.0575;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickPA()
+    {
+        stateTax = startingMoney * 0.037;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    //=======================================================States=======================================================
 
+    //=======================================================Housing=======================================================
 
+    //=======================================================Housing=======================================================
 
     // Start is called before the first frame update
     void Start()
