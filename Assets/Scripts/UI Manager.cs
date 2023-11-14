@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public float startingMoney; //Changed it to 2 separate variables for the meantime
     public float money;
     float stateTax;
-    float 
+    float insurance;
 
     Scene scene;
     public TMP_Text startButtonText;
