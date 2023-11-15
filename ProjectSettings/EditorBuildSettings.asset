@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pick a State.unity
     guid: 64f7049e1d81952499b7cff7408e0aed
   - enabled: 1
-    path: Assets/Scenes/Housing.unity
+    path: Assets/Scenes/Buying.unity
     guid: 367bb0389aba05a47861b94d4bba1942
   - enabled: 1
     path: Assets/Scenes/Food.unity
