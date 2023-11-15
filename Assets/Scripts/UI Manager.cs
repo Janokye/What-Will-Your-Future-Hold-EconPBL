@@ -6,22 +6,180 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    /* public float startingMoney;
-       public float money = startingMoney; -------> Causes a syntax error: error CS0236: A field initializer cannot reference the non-static field, method, or property 'UIManager.startingMoney'
-    */
-
+    
     public float startingMoney; //Changed it to 2 separate variables for the meantime
     public float money;
+    float stateTax;
+    float insurance;
 
     Scene scene;
     public TMP_Text startButtonText;
     public TMP_Text quitButtonText;
     public TMP_Text helpButtonText;
 
-    //Pick a Job
+    //=======================================================Jobs=======================================================
+    public void OnClickJobNurse()
+    {
+        startingMoney = 77600.00f;
+        money = startingMoney;
 
-   
-  
+        Debug.Log(money);
+
+        StartCoroutine(FlashTextColor(startButtonText));
+
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+
+    }
+    public void OnClickJobElectrician()
+    {
+        startingMoney = 49000.00f;
+        money = startingMoney;
+
+        Debug.Log(money);
+
+        StartCoroutine(FlashTextColor(startButtonText));
+
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+
+    }
+    public void OnClickJobStylist()
+    {
+        startingMoney = 41000.00f;
+        money = startingMoney;
+
+        Debug.Log(money);
+
+        StartCoroutine(FlashTextColor(startButtonText));
+
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+
+    }
+    public void OnClickJobGameArtist()
+    {
+        startingMoney = 60000.00f;
+        money = startingMoney;
+
+        Debug.Log(money);
+
+        StartCoroutine(FlashTextColor(startButtonText));
+
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+
+    }
+    public void OnClickJobWelder()
+    {
+        startingMoney = 33000.00f;
+        money = startingMoney;
+
+        Debug.Log(money);
+
+        StartCoroutine(FlashTextColor(startButtonText));
+
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+
+    }
+    public void OnClickJobPharm()
+    {
+        startingMoney = 110000.00f;
+        money = startingMoney;
+
+        Debug.Log(money);
+
+        StartCoroutine(FlashTextColor(startButtonText));
+
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+
+    }
+    //=======================================================Jobs=======================================================
+
+    //=======================================================States=======================================================
+    public void OnClickNC()
+    {
+        stateTax = startingMoney * 0.058;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickFL()
+    {
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickCA()
+    {
+        stateTax = startingMoney * 0.123;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickNY()
+    {
+        stateTax = startingMoney * 0.109;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickGA()
+    {
+        stateTax = startingMoney * 0.0575;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    public void OnClickPA()
+    {
+        stateTax = startingMoney * 0.037;
+        money = money - stateTax;
+        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+        {
+            int currentSceneNum = i;
+            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+        }
+    }
+    //=======================================================States=======================================================
+
+    //=======================================================Housing=======================================================
+
+    //=======================================================Housing=======================================================
 
     // Start is called before the first frame update
     void Start()
