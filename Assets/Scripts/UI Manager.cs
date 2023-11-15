@@ -119,8 +119,10 @@ public class UIManager : MonoBehaviour
     //=======================================================States=======================================================
     public void OnClickNC()
     {
-        stateTax = startingMoney * 0.058;
+        stateTax = startingMoney * 0.058f;
+        insurance = 120;
         money = money - stateTax;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -137,7 +139,7 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickCA()
     {
-        stateTax = startingMoney * 0.123;
+        stateTax = startingMoney * 0.123f;
         money = money - stateTax;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
@@ -147,7 +149,7 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickNY()
     {
-        stateTax = startingMoney * 0.109;
+        stateTax = startingMoney * 0.109f;
         money = money - stateTax;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
@@ -157,7 +159,7 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickGA()
     {
-        stateTax = startingMoney * 0.0575;
+        stateTax = startingMoney * 0.0575f;
         money = money - stateTax;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
@@ -167,7 +169,7 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickPA()
     {
-        stateTax = startingMoney * 0.037;
+        stateTax = startingMoney * 0.037f;
         money = money - stateTax;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
