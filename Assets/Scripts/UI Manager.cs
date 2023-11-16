@@ -200,7 +200,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Renting");
     }
 
-    public void OnClickAp1()
+    public void OnClickBuy1()
     {
         //
     }
