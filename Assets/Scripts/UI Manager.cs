@@ -119,8 +119,10 @@ public class UIManager : MonoBehaviour
     //=======================================================States=======================================================
     public void OnClickNC()
     {
-        stateTax = startingMoney * 0.058;
+        stateTax = startingMoney * 0.058f;
+        insurance = 120 * 12;
         money = money - stateTax;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -129,6 +131,9 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickFL()
     {
+        stateTax = 0;
+        insurance = 98 * 12;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -137,8 +142,10 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickCA()
     {
-        stateTax = startingMoney * 0.123;
+        stateTax = startingMoney * 0.123f;
         money = money - stateTax;
+        insurance = 188 * 12;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -147,8 +154,10 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickNY()
     {
-        stateTax = startingMoney * 0.109;
+        stateTax = startingMoney * 0.109f;
         money = money - stateTax;
+        insurance = 187 * 12;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -157,8 +166,10 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickGA()
     {
-        stateTax = startingMoney * 0.0575;
+        stateTax = startingMoney * 0.0575f;
         money = money - stateTax;
+        insurance = 255 * 12;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -167,8 +178,10 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickPA()
     {
-        stateTax = startingMoney * 0.037;
+        stateTax = startingMoney * 0.037f;
         money = money - stateTax;
+        insurance = 151 * 12;
+        money = money - insurance;
         for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
         {
             int currentSceneNum = i;
@@ -178,7 +191,19 @@ public class UIManager : MonoBehaviour
     //=======================================================States=======================================================
 
     //=======================================================Housing=======================================================
+    public void OnClickBuy()
+    {
+        SceneManager.LoadScene("Buying");
+    }
+    public void OnClickRent()
+    {
+        SceneManager.LoadScene("Renting");
+    }
 
+    public void OnClickBuy1()
+    {
+        //
+    }
     //=======================================================Housing=======================================================
 
     // Start is called before the first frame update
