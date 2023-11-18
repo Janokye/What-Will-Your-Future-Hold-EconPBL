@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Discretionary Expenses.unity
     guid: cf796796b1977ea4d9f93ac5440cdf50
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 71cd13266191ea64b8d178d1f2cde1f6
   m_configObjects: {}

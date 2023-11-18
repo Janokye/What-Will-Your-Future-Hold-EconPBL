@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text helpButtonText;
 
     //UI Buttons shown in Inspector//
+    public TMP_Text lifeHappensTitleText; 
+    public TMP_Text problemText; //found in Life Happens Scene
 
     //=======================================================Jobs=======================================================
     public void OnClickJobNurse()
@@ -29,7 +31,7 @@ public class UIManager : MonoBehaviour
 
         Debug.Log(money);
 
-        StartCoroutine(FlashTextColor(startButtonText));
+        
 
         NextButton(); //load next scene
 
@@ -41,7 +43,7 @@ public class UIManager : MonoBehaviour
 
         Debug.Log(money);
 
-        StartCoroutine(FlashTextColor(startButtonText));
+        
 
         NextButton(); //load next scene
 
@@ -53,7 +55,7 @@ public class UIManager : MonoBehaviour
 
         Debug.Log(money);
 
-        StartCoroutine(FlashTextColor(startButtonText));
+        
 
         NextButton(); //load next scene
 
@@ -65,7 +67,7 @@ public class UIManager : MonoBehaviour
 
         Debug.Log(money);
 
-        StartCoroutine(FlashTextColor(startButtonText));
+        
 
         NextButton(); //load next scene
 
@@ -77,7 +79,7 @@ public class UIManager : MonoBehaviour
 
         Debug.Log(money);
 
-        StartCoroutine(FlashTextColor(startButtonText));
+        
 
         NextButton(); //load next scene
 
@@ -89,7 +91,7 @@ public class UIManager : MonoBehaviour
 
         Debug.Log(money);
 
-        StartCoroutine(FlashTextColor(startButtonText));
+        
 
         NextButton(); //load next scene
 
@@ -104,10 +106,7 @@ public class UIManager : MonoBehaviour
         money = money - stateTax;
         money = money - insurance;
 
-        if (startingMoney <= 0) // if player reaches $0...
-        {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
+        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
         NextButton(); //load next scene
     }
@@ -117,10 +116,7 @@ public class UIManager : MonoBehaviour
         insurance = 98 * 12;
         money = money - insurance;
 
-        if (startingMoney <= 0) // if player reaches $0...
-        {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
+        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
         NextButton(); //load next scene
     }
@@ -131,10 +127,7 @@ public class UIManager : MonoBehaviour
         insurance = 188 * 12;
         money = money - insurance;
 
-        if (startingMoney <= 0) // if player reaches $0...
-        {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
+        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
         NextButton(); //load next scene
     }
@@ -145,10 +138,7 @@ public class UIManager : MonoBehaviour
         insurance = 187 * 12;
         money = money - insurance;
 
-        if (startingMoney <= 0) // if player reaches $0...
-        {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
+        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
         NextButton(); //load next scene
     }
@@ -159,10 +149,7 @@ public class UIManager : MonoBehaviour
         insurance = 255 * 12;
         money = money - insurance;
 
-        if (startingMoney <= 0) // if player reaches $0...
-        {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
+        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
         NextButton(); //load next scene
     }
@@ -173,10 +160,7 @@ public class UIManager : MonoBehaviour
         insurance = 151 * 12;
         money = money - insurance;
 
-        if (startingMoney <= 0) // if player reaches $0...
-        {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
+        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
         NextButton(); //load next scene
     }
@@ -200,12 +184,9 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 1900; //subtract the price of the house per month from their current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
-            NextButton(); //load next scene
+            SceneManager.LoadScene("Food"); //Load the food scene
         }
     }
     public void OnClick2bd3baHOUSE()
@@ -213,12 +194,9 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 5000; //subtract the price of the house per month from their current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
-            NextButton(); //load next scene
+            SceneManager.LoadScene("Food"); //Load the food scene
         }
     }
     public void OnClick5bd6baHOUSE()
@@ -226,12 +204,9 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 10000; //subtract the price of the house per month from their current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
-            NextButton(); //load next scene
+            SceneManager.LoadScene("Food"); //Load the food scene
         }
     }
     //=======================================================Buying=========================================================================================
@@ -243,10 +218,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 1702; //subtract the price of the house per month from their current amount of money
            
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -257,10 +229,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 2000; //subtract the price of the house per month from their current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -271,10 +240,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 7517; //subtract the price of the house per month from their current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
              
             NextButton(); //load next scene
         }
@@ -289,10 +255,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 331.44f; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -303,10 +266,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 520; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -317,10 +277,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 1400; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -332,12 +289,9 @@ public class UIManager : MonoBehaviour
     public void OnClickNCStateButton()
     {
         {
-            startingMoney -= 267.69; //subtract expense from current amount of money
+            startingMoney -= 267.69f; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -348,10 +302,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 584.08f; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -362,10 +313,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 1001.65f; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
 
             NextButton(); //load next scene
         }
@@ -376,10 +324,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 175.01f; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver();
 
             NextButton(); //load next scene
         }
@@ -390,10 +335,7 @@ public class UIManager : MonoBehaviour
         {
             startingMoney -= 0; //subtract expense from current amount of money
 
-            if (startingMoney <= 0) // if player reaches $0...
-            {
-                SceneManager.LoadScene("Game Over"); //...load game over scene
-            }
+            CheckForGameOver();
 
             NextButton(); //load next scene
         }
@@ -405,18 +347,39 @@ public class UIManager : MonoBehaviour
 
     //=======================================================Transportation=========================================================================================
 
+    public void OnClickPublicTransit()
+    {
+        startingMoney -= 75;
+        CheckForGameOver();
+    }
 
+    public void OnClickPrius()
+    {
+        startingMoney -= 523;
+        CheckForGameOver();
+    }
+
+    public void OnClickMercedes()
+    {
+        startingMoney -= 94.17f;
+        CheckForGameOver();
+    }
+
+    public void OnClickBugatti()
+    {
+        startingMoney -= 45000;
+        CheckForGameOver();
+    }
 
     //=======================================================Transportation=========================================================================================
 
-    //=======================================================Health Insurance=========================================================================================
-
-
-
-    //=======================================================Health Insurance=========================================================================================
-
     //=======================================================Life Happens=========================================================================================
 
+   
+
+    
+
+    
 
 
     //=======================================================Life Happens=========================================================================================
@@ -429,8 +392,84 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
+      string currentSceneName = currentScene.name; //get the name of the current scene as a string
+
+      if (currentSceneName == "Life Happens" ) //if the current scene is Life Happens...
+      {
+                
+        int randomNum = Random.Range(1,11); //generate a random number btwn 1 and 11
+
+        switch(randomNum)
+        {
+                        case(1):
+                        lifeHappensTitleText.text = "Oh No!";
+                        problemText.text = "Your phone breaks and now have to buy a new one. This will cost you $399.00 ";
+                        startingMoney -= 399;
+                        break;
+
+                        case(2):
+                        lifeHappensTitleText.text = "Oh No!";
+                        problemText.text = "Your fridge breaks and you need to replace it along with all the food stored inside. This will cost you $2,500.00 ";
+                        startingMoney -= 2500;
+                        break;
+
+                        case(3):
+                        lifeHappensTitleText.text = "Oh No!";
+                        problemText.text = "Your crazy ex breaks down your door and you need to replace it. This will cost you $1,378.00 ";
+                        startingMoney -= 1378;
+                        break;
+
+                        case(4):
+                        lifeHappensTitleText.text = "Oh No!";
+                        problemText.text = "Little Timmy hits a baseball and you need to replace it. This will cost you $258.00 ";
+                        startingMoney -= 258;
+                        break;
+
+                        case(5):
+                        lifeHappensTitleText.text = "Oh No!";
+                        problemText.text = "Your cousin needs a place to stay, your mom is making you pay for their needs. This will cost you $300.00 ";
+                        startingMoney -= 300;
+                        break;
+
+                        case(6):
+                        lifeHappensTitleText.text = "It's Your Lucky Day!";
+                        problemText.text = "Your mom gave you $150 dollars for your Birthday. ";
+                        startingMoney += 100 ;
+                        break;
+
+                        case(7):
+                        lifeHappensTitleText.text = "It's Your Lucky Day!";
+                        problemText.text = "You got a $500 bonus at your job.";
+                        startingMoney += 500;
+
+                        break;
+
+                        case(8):
+                        lifeHappensTitleText.text = "Oh No!";
+                        problemText.text = "You got mugged on the street. They stole your shoes and $50 dollars ($150 dollar loss)";
+                        startingMoney -= 150; 
+
+                        break;
+
+                        case(9):
+                        lifeHappensTitleText.text = "It's Your Lucky Day!'";
+                        problemText.text = "YOU MET MR.BEAST!! He gave you $10,000";
+                        startingMoney += 10000;
+
+                        break;
+
+                        case(10):
+                        lifeHappensTitleText.text = "It's Your Lucky Day!'";
+                        problemText.text = "You found $5 dollars on the floor";
+                        startingMoney += 5;
+
+                        break;
+        }
+      }
     }
+      
+    
 
     // Update is called once per frame
     void Update()
@@ -440,19 +479,19 @@ public class UIManager : MonoBehaviour
 
     public void QuitButton() //Quit Button
     {
-        StartCoroutine(FlashTextColor(quitButtonText));
+        
         Debug.Log("Quit button was clicked"); 
         Application.Quit(); //quit game
     }
 
     public void StartButton() //Start Button - Job Selection Menu
     {
-          StartCoroutine(FlashTextColor(startButtonText));
+          
           SceneManager.LoadScene("Pick a Job");
     }
     public void NextButton() //Go to next scene
     {
-          StartCoroutine(FlashTextColor(startButtonText));    
+          
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1); //switch to next scene in build setting list
     }
     public void RestartButton() //Restart Button
@@ -460,22 +499,25 @@ public class UIManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
         string currentSceneName = currentScene.name; //get the name of the current scene as a string
 
-        //StartCoroutine(FlashTextColor(startButtonText));
         SceneManager.LoadScene(currentSceneName); //load the current scene
     }
 
     public void HelpButton() //Help Button
     {
-        StartCoroutine(FlashTextColor(helpButtonText));
+        
         SceneManager.LoadScene("HELP");
+    }
+
+    void CheckForGameOver()
+    {
+        if (startingMoney <= 0) // if player reaches $0...
+        {
+           SceneManager.LoadScene("Game Over"); //...load game over scene
+        }
     }
 
     //void PlayerChoices()
 
-    IEnumerator FlashTextColor(TMP_Text buttonTextName) //change the text color to green for 2.5 seconds then switch scene
-    {
-         buttonTextName.color = Color.green;
-         yield return new WaitForSeconds(2.5f); //wait 1 second       
-    }
+
 }
 
