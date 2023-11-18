@@ -13,9 +13,13 @@ public class UIManager : MonoBehaviour
     float insurance;
 
     Scene scene;
+
+    //UI Buttons shown in Inspector//
     public TMP_Text startButtonText;
     public TMP_Text quitButtonText;
     public TMP_Text helpButtonText;
+
+    //UI Buttons shown in Inspector//
 
     //=======================================================Jobs=======================================================
     public void OnClickJobNurse()
@@ -27,11 +31,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(FlashTextColor(startButtonText));
 
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-        {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-        }
+        NextButton(); //load next scene
 
     }
     public void OnClickJobElectrician()
@@ -43,11 +43,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(FlashTextColor(startButtonText));
 
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-        {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-        }
+        NextButton(); //load next scene
 
     }
     public void OnClickJobStylist()
@@ -59,11 +55,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(FlashTextColor(startButtonText));
 
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-        {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-        }
+        NextButton(); //load next scene
 
     }
     public void OnClickJobGameArtist()
@@ -75,11 +67,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(FlashTextColor(startButtonText));
 
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-        {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-        }
+        NextButton(); //load next scene
 
     }
     public void OnClickJobWelder()
@@ -91,11 +79,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(FlashTextColor(startButtonText));
 
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-        {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-        }
+        NextButton(); //load next scene
 
     }
     public void OnClickJobPharm()
@@ -107,11 +91,7 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(FlashTextColor(startButtonText));
 
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-        {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-        }
+        NextButton(); //load next scene
 
     }
     //=======================================================Jobs=======================================================
@@ -123,22 +103,26 @@ public class UIManager : MonoBehaviour
         insurance = 120 * 12;
         money = money - stateTax;
         money = money - insurance;
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+
+        if (startingMoney <= 0) // if player reaches $0...
         {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+           SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        NextButton(); //load next scene
     }
     public void OnClickFL()
     {
         stateTax = 0;
         insurance = 98 * 12;
         money = money - insurance;
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+
+        if (startingMoney <= 0) // if player reaches $0...
         {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+           SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        NextButton(); //load next scene
     }
     public void OnClickCA()
     {
@@ -146,11 +130,13 @@ public class UIManager : MonoBehaviour
         money = money - stateTax;
         insurance = 188 * 12;
         money = money - insurance;
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+
+        if (startingMoney <= 0) // if player reaches $0...
         {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+           SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        NextButton(); //load next scene
     }
     public void OnClickNY()
     {
@@ -158,11 +144,13 @@ public class UIManager : MonoBehaviour
         money = money - stateTax;
         insurance = 187 * 12;
         money = money - insurance;
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+
+        if (startingMoney <= 0) // if player reaches $0...
         {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+           SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        NextButton(); //load next scene
     }
     public void OnClickGA()
     {
@@ -170,11 +158,13 @@ public class UIManager : MonoBehaviour
         money = money - stateTax;
         insurance = 255 * 12;
         money = money - insurance;
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+
+        if (startingMoney <= 0) // if player reaches $0...
         {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+           SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        NextButton(); //load next scene
     }
     public void OnClickPA()
     {
@@ -182,15 +172,17 @@ public class UIManager : MonoBehaviour
         money = money - stateTax;
         insurance = 151 * 12;
         money = money - insurance;
-        for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
+
+        if (startingMoney <= 0) // if player reaches $0...
         {
-            int currentSceneNum = i;
-            SceneManager.LoadScene(currentSceneNum); //load corresponding scene
+           SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        NextButton(); //load next scene
     }
     //=======================================================States=======================================================
 
-    //=======================================================Housing=======================================================
+    //=======================================================Choose Housing=======================================================
     public void OnClickBuy()
     {
         SceneManager.LoadScene("Buying");
@@ -199,13 +191,241 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Renting");
     }
+   
+    //=======================================================Choose Housing=======================================================
 
-    public void OnClickBuy1()
+    //=======================================================Buying=========================================================================================
+    public void OnClick1bd1baHOUSE()
     {
-        //
-    }
-    //=======================================================Housing=======================================================
+        {
+            startingMoney -= 1900; //subtract the price of the house per month from their current amount of money
 
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+    public void OnClick2bd3baHOUSE()
+    {
+        {
+            startingMoney -= 5000; //subtract the price of the house per month from their current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+    public void OnClick5bd6baHOUSE()
+    {
+        {
+            startingMoney -= 10000; //subtract the price of the house per month from their current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+    //=======================================================Buying=========================================================================================
+
+    //=======================================================Renting=========================================================================================
+
+    public void OnClick1bd1baRENTAL()
+    {
+        {
+            startingMoney -= 1702; //subtract the price of the house per month from their current amount of money
+           
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClick2bd2baRENTAL()
+    {
+        {
+            startingMoney -= 2000; //subtract the price of the house per month from their current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClick5bd6baRENTAL()
+    {
+        {
+            startingMoney -= 7517; //subtract the price of the house per month from their current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+             
+            NextButton(); //load next scene
+        }
+    }
+
+    //=======================================================Renting=========================================================================================
+
+    //=======================================================Food=========================================================================================
+
+    public void OnClickNeverEatOutButton()
+    {
+        {
+            startingMoney -= 331.44f; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickEatOutTwiceButton()
+    {
+        {
+            startingMoney -= 520; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickEatOutEverydayButton()
+    {
+        {
+            startingMoney -= 1400; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    //=======================================================Food=========================================================================================
+
+    //=======================================================Student Loans=========================================================================================
+    public void OnClickNCStateButton()
+    {
+        {
+            startingMoney -= 267.69; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickPennStateButton()
+    {
+        {
+            startingMoney -= 584.08f; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickNYUButton()
+    {
+        {
+            startingMoney -= 1001.65f; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickWakeTechButton()
+    {
+        {
+            startingMoney -= 175.01f; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickNoCollegeButton()
+    {
+        {
+            startingMoney -= 0; //subtract expense from current amount of money
+
+            if (startingMoney <= 0) // if player reaches $0...
+            {
+                SceneManager.LoadScene("Game Over"); //...load game over scene
+            }
+
+            NextButton(); //load next scene
+        }
+    }
+
+
+
+    //=======================================================Student Loans=========================================================================================
+
+    //=======================================================Transportation=========================================================================================
+
+
+
+    //=======================================================Transportation=========================================================================================
+
+    //=======================================================Health Insurance=========================================================================================
+
+
+
+    //=======================================================Health Insurance=========================================================================================
+
+    //=======================================================Life Happens=========================================================================================
+
+
+
+    //=======================================================Life Happens=========================================================================================
+
+    //=======================================================Discretionary Expenses=========================================================================================
+
+
+
+    //=======================================================Discretionary Expenses=========================================================================================
     // Start is called before the first frame update
     void Start()
     {
@@ -232,13 +452,8 @@ public class UIManager : MonoBehaviour
     }
     public void NextButton() //Go to next scene
     {
-          StartCoroutine(FlashTextColor(startButtonText));
-          
-          for (int i = 2; i <= 3; i++) //increment the scene number by 1 each time the button is clicked
-          {
-              int currentSceneNum = i;
-              SceneManager.LoadScene(currentSceneNum); //load corresponding scene
-          }    
+          StartCoroutine(FlashTextColor(startButtonText));    
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1); //switch to next scene in build setting list
     }
     public void RestartButton() //Restart Button
     {
