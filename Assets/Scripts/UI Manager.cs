@@ -7,8 +7,8 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     
-    public float startingMoney; //Changed it to 2 separate variables for the meantime
-    public float money;
+    public float startingMoney = 0f; //Changed it to 2 separate variables for the meantime
+    
     float stateTax;
     float insurance;
 
@@ -23,377 +23,28 @@ public class UIManager : MonoBehaviour
     public TMP_Text lifeHappensTitleText; 
     public TMP_Text problemText; //found in Life Happens Scene
 
-    //=======================================================Jobs=======================================================
-    public void OnClickJobNurse()
-    {
-        startingMoney = 77600.00f;
-        money = startingMoney;
+    public TMP_Text displayBalanceText;
 
-        Debug.Log(money);
 
-        
 
-        NextButton(); //load next scene
-
-    }
-    public void OnClickJobElectrician()
-    {
-        startingMoney = 49000.00f;
-        money = startingMoney;
-
-        Debug.Log(money);
-
-        
-
-        NextButton(); //load next scene
-
-    }
-    public void OnClickJobStylist()
-    {
-        startingMoney = 41000.00f;
-        money = startingMoney;
-
-        Debug.Log(money);
-
-        
-
-        NextButton(); //load next scene
-
-    }
-    public void OnClickJobGameArtist()
-    {
-        startingMoney = 60000.00f;
-        money = startingMoney;
-
-        Debug.Log(money);
-
-        
-
-        NextButton(); //load next scene
-
-    }
-    public void OnClickJobWelder()
-    {
-        startingMoney = 33000.00f;
-        money = startingMoney;
-
-        Debug.Log(money);
-
-        
-
-        NextButton(); //load next scene
-
-    }
-    public void OnClickJobPharm()
-    {
-        startingMoney = 110000.00f;
-        money = startingMoney;
-
-        Debug.Log(money);
-
-        
-
-        NextButton(); //load next scene
-
-    }
-    //=======================================================Jobs=======================================================
-
-    //=======================================================States=======================================================
-    public void OnClickNC()
-    {
-        stateTax = startingMoney * 0.058f;
-        insurance = 120 * 12;
-        money = money - stateTax;
-        money = money - insurance;
-
-        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-        NextButton(); //load next scene
-    }
-    public void OnClickFL()
-    {
-        stateTax = 0;
-        insurance = 98 * 12;
-        money = money - insurance;
-
-        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-        NextButton(); //load next scene
-    }
-    public void OnClickCA()
-    {
-        stateTax = startingMoney * 0.123f;
-        money = money - stateTax;
-        insurance = 188 * 12;
-        money = money - insurance;
-
-        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-        NextButton(); //load next scene
-    }
-    public void OnClickNY()
-    {
-        stateTax = startingMoney * 0.109f;
-        money = money - stateTax;
-        insurance = 187 * 12;
-        money = money - insurance;
-
-        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-        NextButton(); //load next scene
-    }
-    public void OnClickGA()
-    {
-        stateTax = startingMoney * 0.0575f;
-        money = money - stateTax;
-        insurance = 255 * 12;
-        money = money - insurance;
-
-        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-        NextButton(); //load next scene
-    }
-    public void OnClickPA()
-    {
-        stateTax = startingMoney * 0.037f;
-        money = money - stateTax;
-        insurance = 151 * 12;
-        money = money - insurance;
-
-        CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-        NextButton(); //load next scene
-    }
-    //=======================================================States=======================================================
-
-    //=======================================================Choose Housing=======================================================
-    public void OnClickBuy()
-    {
-        SceneManager.LoadScene("Buying");
-    }
-    public void OnClickRent()
-    {
-        SceneManager.LoadScene("Renting");
-    }
-   
-    //=======================================================Choose Housing=======================================================
-
-    //=======================================================Buying=========================================================================================
-    public void OnClick1bd1baHOUSE()
-    {
-        {
-            startingMoney -= 1900; //subtract the price of the house per month from their current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            SceneManager.LoadScene("Food"); //Load the food scene
-        }
-    }
-    public void OnClick2bd3baHOUSE()
-    {
-        {
-            startingMoney -= 5000; //subtract the price of the house per month from their current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            SceneManager.LoadScene("Food"); //Load the food scene
-        }
-    }
-    public void OnClick5bd6baHOUSE()
-    {
-        {
-            startingMoney -= 10000; //subtract the price of the house per month from their current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            SceneManager.LoadScene("Food"); //Load the food scene
-        }
-    }
-    //=======================================================Buying=========================================================================================
-
-    //=======================================================Renting=========================================================================================
-
-    public void OnClick1bd1baRENTAL()
-    {
-        {
-            startingMoney -= 1702; //subtract the price of the house per month from their current amount of money
-           
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClick2bd2baRENTAL()
-    {
-        {
-            startingMoney -= 2000; //subtract the price of the house per month from their current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClick5bd6baRENTAL()
-    {
-        {
-            startingMoney -= 7517; //subtract the price of the house per month from their current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-             
-            NextButton(); //load next scene
-        }
-    }
-
-    //=======================================================Renting=========================================================================================
-
-    //=======================================================Food=========================================================================================
-
-    public void OnClickNeverEatOutButton()
-    {
-        {
-            startingMoney -= 331.44f; //subtract expense from current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClickEatOutTwiceButton()
-    {
-        {
-            startingMoney -= 520; //subtract expense from current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClickEatOutEverydayButton()
-    {
-        {
-            startingMoney -= 1400; //subtract expense from current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    //=======================================================Food=========================================================================================
-
-    //=======================================================Student Loans=========================================================================================
-    public void OnClickNCStateButton()
-    {
-        {
-            startingMoney -= 267.69f; //subtract expense from current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClickPennStateButton()
-    {
-        {
-            startingMoney -= 584.08f; //subtract expense from current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClickNYUButton()
-    {
-        {
-            startingMoney -= 1001.65f; //subtract expense from current amount of money
-
-            CheckForGameOver(); // switch to game over scene if startingMoney reaches 0
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClickWakeTechButton()
-    {
-        {
-            startingMoney -= 175.01f; //subtract expense from current amount of money
-
-            CheckForGameOver();
-
-            NextButton(); //load next scene
-        }
-    }
-
-    public void OnClickNoCollegeButton()
-    {
-        {
-            startingMoney -= 0; //subtract expense from current amount of money
-
-            CheckForGameOver();
-
-            NextButton(); //load next scene
-        }
-    }
-
-
-
-    //=======================================================Student Loans=========================================================================================
-
-    //=======================================================Transportation=========================================================================================
-
-    public void OnClickPublicTransit()
-    {
-        startingMoney -= 75;
-        CheckForGameOver();
-    }
-
-    public void OnClickPrius()
-    {
-        startingMoney -= 523;
-        CheckForGameOver();
-    }
-
-    public void OnClickMercedes()
-    {
-        startingMoney -= 94.17f;
-        CheckForGameOver();
-    }
-
-    public void OnClickBugatti()
-    {
-        startingMoney -= 45000;
-        CheckForGameOver();
-    }
-
-    //=======================================================Transportation=========================================================================================
-
-    //=======================================================Life Happens=========================================================================================
-
-   
-
-    
-
-    
-
-
-    //=======================================================Life Happens=========================================================================================
-
-    //=======================================================Discretionary Expenses=========================================================================================
-
-
-
-    //=======================================================Discretionary Expenses=========================================================================================
     // Start is called before the first frame update
     void Start()
     {
       Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
       string currentSceneName = currentScene.name; //get the name of the current scene as a string
+
+
+
+      if (currentSceneName != "Main Menu")
+      {
+        if (currentSceneName != "HELP")
+        {    
+          startingMoney = PlayerPrefs.GetFloat("startingMoney",0f); //player balance starts out on 0
+          
+        }
+      }
+      UpdateBalance();              // update amount
+      
 
       if (currentSceneName == "Life Happens" ) //if the current scene is Life Happens...
       {
@@ -468,13 +119,360 @@ public class UIManager : MonoBehaviour
         }
       }
     }
+
+
+
+
+    //=======================================================Jobs=======================================================
+    public void OnClickJobNurse()
+    {
+        AddToMoney(77600.00f);
+        NextButton(); //load next scene
+        Debug.Log(5 + -1);
+        
+    }
+    public void OnClickJobElectrician()
+    {
+        AddToMoney(49000.00f);
+        NextButton(); //load next scene
+
+    }
+    public void OnClickJobStylist()
+    {
+        AddToMoney(41000.00f);
+        NextButton(); //load next scene
+
+    }
+    public void OnClickJobGameArtist()
+    {
+        AddToMoney(60000.00f);
+        NextButton(); //load next scene
+
+    }
+    public void OnClickJobWelder()
+    {
+        AddToMoney(33000.00f);
+        NextButton(); //load next scene
+
+    }
+    public void OnClickJobPharm()
+    {
+        AddToMoney(110000.00f);
+        NextButton(); //load next scene
+
+    }
+    //=======================================================Jobs=======================================================
+
+    //=======================================================States=======================================================
+    public void OnClickNC()
+    {
+        stateTax = startingMoney * 0.058f;
+        insurance = 120 * 12;
+        float total = (stateTax + insurance);
+        AddToMoney(-total);
+        
+
+        
+
+        NextButton(); //load next scene
+    }
+    public void OnClickFL()
+    {
+        stateTax = 0;
+        insurance = 98 * 12;
+        float total = stateTax + insurance;
+        AddToMoney(-total);
+
+       
+
+        NextButton(); //load next scene
+    }
+    public void OnClickCA()
+    {
+        stateTax = startingMoney * 0.123f;
+        startingMoney -= stateTax;
+        insurance = 188 * 12;
+        float total = stateTax + insurance;
+        AddToMoney(-total);
+
+        
+
+        NextButton(); //load next scene
+    }
+    public void OnClickNY()
+    {
+        stateTax = startingMoney * 0.109f;
+        startingMoney -= stateTax;
+        insurance = 187 * 12;
+        float total = stateTax + insurance;
+        AddToMoney(-total);
+
+        
+
+        NextButton(); //load next scene
+    }
+    public void OnClickGA()
+    {
+        stateTax = startingMoney * 0.0575f;
+        startingMoney -= stateTax;
+        insurance = 255 * 12;
+        float total = stateTax + insurance;
+        AddToMoney(-total);
+
+        
+
+        NextButton(); //load next scene
+    }
+    public void OnClickPA()
+    {
+        stateTax = startingMoney * 0.037f;
+        startingMoney -= stateTax;
+        insurance = 151 * 12;
+        float total = stateTax + insurance;
+        AddToMoney(-total);
+
+        
+
+        NextButton(); //load next scene
+    }
+    //=======================================================States=======================================================
+
+    //=======================================================Choose Housing=======================================================
+    public void OnClickBuy()
+    {
+        SceneManager.LoadScene("Buying");
+    }
+    public void OnClickRent()
+    {
+        SceneManager.LoadScene("Renting");
+    }
+   
+    //=======================================================Choose Housing=======================================================
+
+    //=======================================================Buying=========================================================================================
+    public void OnClick1bd1baHOUSE()
+    {
+        {
+            AddToMoney(-1900); //subtract the price of the house per month from their current amount of money
+
+            
+
+            SceneManager.LoadScene("Food"); //Load the food scene
+        }
+    }
+    public void OnClick2bd3baHOUSE()
+    {
+        {
+            AddToMoney(-5000); //subtract the price of the house per month from their current amount of money
+
+            
+
+            SceneManager.LoadScene("Food"); //Load the food scene
+        }
+    }
+    public void OnClick5bd6baHOUSE()
+    {
+        {
+            AddToMoney(-10000); //subtract the price of the house per month from their current amount of money
+
+            
+
+            SceneManager.LoadScene("Food"); //Load the food scene
+        }
+    }
+    //=======================================================Buying=========================================================================================
+
+    //=======================================================Renting=========================================================================================
+
+    public void OnClick1bd1baRENTAL()
+    {
+        {
+            AddToMoney(-1702); //subtract the price of the house per month from their current amount of money
+           
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClick2bd2baRENTAL()
+    {
+        {
+            AddToMoney(-2000); //subtract the price of the house per month from their current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClick5bd6baRENTAL()
+    {
+        {
+            AddToMoney(-7517); //subtract the price of the house per month from their current amount of money
+
+            
+             
+            NextButton(); //load next scene
+        }
+    }
+
+    //=======================================================Renting=========================================================================================
+
+    //=======================================================Food=========================================================================================
+
+    public void OnClickNeverEatOutButton()
+    {
+        {
+            AddToMoney(-331.44f); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickEatOutTwiceButton()
+    {
+        {
+            AddToMoney(-520); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickEatOutEverydayButton()
+    {
+        {
+            AddToMoney(-1400); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    //=======================================================Food=========================================================================================
+
+    //=======================================================Student Loans=========================================================================================
+    public void OnClickNCStateButton()
+    {
+        {
+            AddToMoney(-267.69f); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickPennStateButton()
+    {
+        {
+            AddToMoney(-584.08f); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickNYUButton()
+    {
+        {
+            AddToMoney(-1001.65f); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickWakeTechButton()
+    {
+        {
+            AddToMoney(-175.01f); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+    public void OnClickNoCollegeButton()
+    {
+        {
+            AddToMoney(-0); //subtract expense from current amount of money
+
+            
+
+            NextButton(); //load next scene
+        }
+    }
+
+
+
+    //=======================================================Student Loans=========================================================================================
+
+    //=======================================================Transportation=========================================================================================
+
+    public void OnClickPublicTransit()
+    {
+        AddToMoney(-75);
+       
+        NextButton();
+    }
+
+    public void OnClickPrius()
+    {
+        AddToMoney(-523);
+       
+        NextButton();
+    }
+
+    public void OnClickMercedes()
+    {
+        AddToMoney(-94.17f);
+        
+        NextButton();
+    }
+
+    public void OnClickBugatti()
+    {
+        AddToMoney(-45000);
+       
+        NextButton();
+    }
+
+    //=======================================================Transportation=========================================================================================
+
+   
+
+    //=======================================================Discretionary Expenses=========================================================================================
+
+
+
+    //=======================================================Discretionary Expenses=========================================================================================
+    
       
     
 
     // Update is called once per frame
     void Update()
     {
-        
+         /*
+      if (currentSceneName != "Main Menu")
+      {
+        if (currentSceneName != "HELP")
+        {
+                
+                
+           
+        }
+      }
+      */
     }
 
     public void QuitButton() //Quit Button
@@ -486,12 +484,12 @@ public class UIManager : MonoBehaviour
 
     public void StartButton() //Start Button - Job Selection Menu
     {
-          
+          PlayerPrefs.DeleteAll(); //delete all previous money aquired
           SceneManager.LoadScene("Pick a Job");
     }
     public void NextButton() //Go to next scene
     {
-          
+          PlayerPrefs.Save(); // save money balance before switching to next scene
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1); //switch to next scene in build setting list
     }
     public void RestartButton() //Restart Button
@@ -508,16 +506,38 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("HELP");
     }
 
-    void CheckForGameOver()
+  
+
+    public void AddToMoney(float amount)
     {
-        if (startingMoney <= 0) // if player reaches $0...
+        float currentAmount = PlayerPrefs.GetFloat("startingMoney",0f); //current amount of money set to 0
+        float newAmount = currentAmount + amount; //add amount to current amount to update
+
+        PlayerPrefs.SetFloat("startingMoney", newAmount); //save the most updated balance to player prefs
+
+        if (newAmount <= 0)
         {
-           SceneManager.LoadScene("Game Over"); //...load game over scene
+            SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+
+        PlayerPrefs.Save();
     }
 
-    //void PlayerChoices()
 
-
+    void UpdateBalance()
+    {
+      Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
+      string currentSceneName = currentScene.name; //get the name of the current scene as a string
+      if (currentSceneName != "Main Menu")
+      {
+        if (currentSceneName != "HELP")
+        {    
+         displayBalanceText.text = "Your Current Balance is: $" + startingMoney.ToString();
+          
+        }
+      }
+        
+    }
+    
 }
 

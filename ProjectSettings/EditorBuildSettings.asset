@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Transportation.unity
     guid: 429a679973e3f4b468972be8dc546e88
   - enabled: 1
-    path: Assets/Scenes/Health Insurance.unity
-    guid: bb5d5f6cf524010498ee66fbecfea044
-  - enabled: 1
     path: Assets/Scenes/Life Happens.unity
     guid: c9ca923f89558ac44b8f3094a43234d1
   - enabled: 1
