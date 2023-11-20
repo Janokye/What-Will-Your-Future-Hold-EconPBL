@@ -783,7 +783,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1083,9 +1083,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8565a5aa952a9f64388fed1767153d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingMoney: 0
   startButtonText: {fileID: 938327685}
   quitButtonText: {fileID: 1534856660}
   helpButtonText: {fileID: 1763802642}
+  lifeHappensTitleText: {fileID: 0}
+  problemText: {fileID: 0}
+  displayBalanceText: {fileID: 0}
 --- !u!4 &1407417390
 Transform:
   m_ObjectHideFlags: 0
@@ -1191,7 +1195,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1325,7 +1329,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
