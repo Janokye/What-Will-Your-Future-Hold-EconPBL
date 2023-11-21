@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1167,14 +1167,14 @@ RectTransform:
   m_GameObject: {fileID: 1875895065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4215907, y: 1.9480951, z: 1.9480951}
+  m_LocalScale: {x: 1.0948807, y: 1.5003839, z: 1.5003839}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 253455499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 176}
+  m_AnchoredPosition: {x: 7, y: 176}
   m_SizeDelta: {x: 654.0549, y: 45.3403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875895067
@@ -1197,7 +1197,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Game Objective & Short Synopsis Here]'
+  m_text: 'In this game you''ll choose a job and different aspects of your life to
+    see the differences between your gross pay and net pay factoring your expenses!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}

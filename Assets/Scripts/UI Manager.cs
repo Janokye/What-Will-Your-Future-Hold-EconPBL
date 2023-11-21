@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
 
     public TMP_Text displayBalanceText;
 
+    public TMP_Text noCollegeError;
+    public string job = "Job";
+
 
 
     // Start is called before the first frame update
@@ -126,6 +129,7 @@ public class UIManager : MonoBehaviour
     //=======================================================Jobs=======================================================
     public void OnClickJobNurse()
     {
+        job = "Pediatric Nurse";
         AddToMoney(77600.00f);
         NextButton(); //load next scene
         Debug.Log(5 + -1);
@@ -133,30 +137,35 @@ public class UIManager : MonoBehaviour
     }
     public void OnClickJobElectrician()
     {
+        job = "Electrician";
         AddToMoney(49000.00f);
         NextButton(); //load next scene
 
     }
     public void OnClickJobStylist()
     {
+        job = "Hair Stylist";
         AddToMoney(41000.00f);
         NextButton(); //load next scene
 
     }
     public void OnClickJobGameArtist()
     {
+        job = "Game Artist";
         AddToMoney(60000.00f);
         NextButton(); //load next scene
 
     }
     public void OnClickJobWelder()
     {
+        job = "Pipe Welder";
         AddToMoney(33000.00f);
         NextButton(); //load next scene
 
     }
     public void OnClickJobPharm()
     {
+        job = "Pharmaceutical Scientist";
         AddToMoney(110000.00f);
         NextButton(); //load next scene
 
@@ -357,6 +366,13 @@ public class UIManager : MonoBehaviour
     //=======================================================Food=========================================================================================
 
     //=======================================================Student Loans=========================================================================================
+    IEnumerator errorEnum()
+    {
+        noCollegeError.text = "Your profession requires you to go to college!";
+        yield return new WaitForSeconds(2.5f);
+        noCollegeError.text = "";
+    }
+
     public void OnClickNCStateButton()
     {
         {
@@ -403,14 +419,22 @@ public class UIManager : MonoBehaviour
 
     public void OnClickNoCollegeButton()
     {
+        if (job == "Pediatric Nurse" || job == "Pharmaceutical Scientist")
         {
-            AddToMoney(-0); //subtract expense from current amount of money
-
-            
-
-            NextButton(); //load next scene
+            StartCoroutine(errorEnum());
         }
+        else
+        {
+
+           Debug.Log(job);
+           AddToMoney(-0); //subtract expense from current amount of money
+
+           NextButton(); //load next scene
+        }
+            
     }
+
+
 
 
 
