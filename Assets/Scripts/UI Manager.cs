@@ -26,7 +26,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text displayBalanceText;
 
     public TMP_Text noCollegeError;
-    public string job = "Job";
+    public static string job = "Job";
+    public int threeSelections = 0;
 
 
 
@@ -476,27 +477,85 @@ public class UIManager : MonoBehaviour
 
     //=======================================================Discretionary Expenses=========================================================================================
 
+    public void OnClickPhoneBill()
+    {
+        int phoneBill = 75 * 12;
+        AddToMoney(-phoneBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickCleaningService()
+    {
+        int cleaningBill = 100 * 12;
+        AddToMoney(-cleaningBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickGym()
+    {
+        int gymBill = 10 * 12;
+        AddToMoney(-gymBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickCableBill()
+    {
+        int cableBill = 75 * 12;
+        AddToMoney(-cableBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickPet()
+    {
+        int petBill = 50 * 12;
+        AddToMoney(-petBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickStreaming()
+    {
+        int streamBill = 15 * 12;
+        AddToMoney(-streamBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickInternet()
+    {
+        int intBill = 150 * 12;
+        AddToMoney(-intBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickLawn()
+    {
+        int lawnBill = 200 * 12;
+        AddToMoney(-lawnBill);
+        threeSelections += 1;
+    }
+
+    public void OnClickInvestment()
+    {
+        int invBill = 50 * 12;
+        AddToMoney(-invBill);
+        threeSelections += 1;
+    }
+
+    
 
 
     //=======================================================Discretionary Expenses=========================================================================================
-    
-      
-    
+
+
+
 
     // Update is called once per frame
     void Update()
     {
-         /*
-      if (currentSceneName != "Main Menu")
-      {
-        if (currentSceneName != "HELP")
-        {
-                
-                
-           
-        }
-      }
-      */
+       if(threeSelections == 3)
+       {
+            threeSelections = 0;
+            NextButton();
+       }
     }
 
     public void QuitButton() //Quit Button
