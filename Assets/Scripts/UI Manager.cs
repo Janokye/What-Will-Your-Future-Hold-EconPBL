@@ -29,7 +29,11 @@ public class UIManager : MonoBehaviour
     public static string job = "Job";
     public int threeSelections = 0;
 
-
+    public List <string> listOfExpenses = new List <string> (); //list of expenses
+   
+    public TMP_Text Output;
+    public TMP_Text expenseText;
+    public string outputTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +51,7 @@ public class UIManager : MonoBehaviour
           
         }
       }
+
       UpdateBalance();              // update amount
       
 
@@ -263,7 +268,7 @@ public class UIManager : MonoBehaviour
     public void OnClick1bd1baHOUSE()
     {
         {
-            AddToMoney(-1900); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-1900 * 12); //subtract the price of the house per month from their current amount of money
 
             
 
@@ -273,7 +278,7 @@ public class UIManager : MonoBehaviour
     public void OnClick2bd3baHOUSE()
     {
         {
-            AddToMoney(-5000); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-5000 * 12); //subtract the price of the house per month from their current amount of money
 
             
 
@@ -283,7 +288,7 @@ public class UIManager : MonoBehaviour
     public void OnClick5bd6baHOUSE()
     {
         {
-            AddToMoney(-10000); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-10000 * 12); //subtract the price of the house per month from their current amount of money
 
             
 
@@ -297,7 +302,7 @@ public class UIManager : MonoBehaviour
     public void OnClick1bd1baRENTAL()
     {
         {
-            AddToMoney(-1702); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-1702 * 12); //subtract the price of the house per month from their current amount of money
            
             
 
@@ -308,7 +313,7 @@ public class UIManager : MonoBehaviour
     public void OnClick2bd2baRENTAL()
     {
         {
-            AddToMoney(-2000); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-2000 * 12); //subtract the price of the house per month from their current amount of money
 
             
 
@@ -319,7 +324,7 @@ public class UIManager : MonoBehaviour
     public void OnClick5bd6baRENTAL()
     {
         {
-            AddToMoney(-7517); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-7517 * 12); //subtract the price of the house per month from their current amount of money
 
             
              
@@ -334,7 +339,7 @@ public class UIManager : MonoBehaviour
     public void OnClickNeverEatOutButton()
     {
         {
-            AddToMoney(-331.44f); //subtract expense from current amount of money
+            AddToMoney(-331.44f * 12f); //subtract expense from current amount of money
 
             
 
@@ -345,7 +350,7 @@ public class UIManager : MonoBehaviour
     public void OnClickEatOutTwiceButton()
     {
         {
-            AddToMoney(-520); //subtract expense from current amount of money
+            AddToMoney(-520 * 12); //subtract expense from current amount of money
 
             
 
@@ -356,7 +361,7 @@ public class UIManager : MonoBehaviour
     public void OnClickEatOutEverydayButton()
     {
         {
-            AddToMoney(-1400); //subtract expense from current amount of money
+            AddToMoney(-1400 * 12); //subtract expense from current amount of money
 
             
 
@@ -377,7 +382,7 @@ public class UIManager : MonoBehaviour
     public void OnClickNCStateButton()
     {
         {
-            AddToMoney(-267.69f); //subtract expense from current amount of money
+            AddToMoney(-267.69f * 12f); //subtract expense from current amount of money
 
             
 
@@ -388,7 +393,7 @@ public class UIManager : MonoBehaviour
     public void OnClickPennStateButton()
     {
         {
-            AddToMoney(-584.08f); //subtract expense from current amount of money
+            AddToMoney(-584.08f * 12f); //subtract expense from current amount of money
 
             
 
@@ -399,7 +404,7 @@ public class UIManager : MonoBehaviour
     public void OnClickNYUButton()
     {
         {
-            AddToMoney(-1001.65f); //subtract expense from current amount of money
+            AddToMoney(-1001.65f * 12f); //subtract expense from current amount of money
 
             
 
@@ -410,7 +415,7 @@ public class UIManager : MonoBehaviour
     public void OnClickWakeTechButton()
     {
         {
-            AddToMoney(-175.01f); //subtract expense from current amount of money
+            AddToMoney(-175.01f * 12f); //subtract expense from current amount of money
 
             
 
@@ -445,28 +450,28 @@ public class UIManager : MonoBehaviour
 
     public void OnClickPublicTransit()
     {
-        AddToMoney(-75);
+        AddToMoney(-75 * 12);
        
         NextButton();
     }
 
     public void OnClickPrius()
     {
-        AddToMoney(-523);
+        AddToMoney(-523 * 12);
        
         NextButton();
     }
 
     public void OnClickMercedes()
     {
-        AddToMoney(-94.17f);
+        AddToMoney(-94.17f * 12f);
         
         NextButton();
     }
 
     public void OnClickBugatti()
     {
-        AddToMoney(-45000);
+        AddToMoney(-45000 * 12);
        
         NextButton();
     }
@@ -479,65 +484,85 @@ public class UIManager : MonoBehaviour
 
     public void OnClickPhoneBill()
     {
+        
+        
         int phoneBill = 75 * 12;
         AddToMoney(-phoneBill);
         threeSelections += 1;
+
+        AddExpensesToList("Phone Bill");
     }
 
     public void OnClickCleaningService()
     {
+       
         int cleaningBill = 100 * 12;
         AddToMoney(-cleaningBill);
         threeSelections += 1;
+        AddExpensesToList("Cleaning Service");
     }
 
     public void OnClickGym()
     {
+        
         int gymBill = 10 * 12;
         AddToMoney(-gymBill);
         threeSelections += 1;
+        AddExpensesToList("Gym Membership");
     }
 
     public void OnClickCableBill()
     {
+        
         int cableBill = 75 * 12;
         AddToMoney(-cableBill);
         threeSelections += 1;
+        AddExpensesToList("Cable");
     }
 
     public void OnClickPet()
     {
+        
         int petBill = 50 * 12;
         AddToMoney(-petBill);
         threeSelections += 1;
+        AddExpensesToList("Pet");
     }
 
     public void OnClickStreaming()
     {
+        
         int streamBill = 15 * 12;
         AddToMoney(-streamBill);
         threeSelections += 1;
+        AddExpensesToList("Streaming Services");
     }
 
     public void OnClickInternet()
     {
+        
         int intBill = 150 * 12;
         AddToMoney(-intBill);
         threeSelections += 1;
+        AddExpensesToList("Internet");
     }
 
     public void OnClickLawn()
     {
+        
         int lawnBill = 200 * 12;
         AddToMoney(-lawnBill);
         threeSelections += 1;
+        AddExpensesToList("Lawn Service");
     }
 
     public void OnClickInvestment()
     {
+        
         int invBill = 50 * 12;
         AddToMoney(-invBill);
         threeSelections += 1;
+        AddExpensesToList("Retirement Investment");
     }
 
     
@@ -607,6 +632,7 @@ public class UIManager : MonoBehaviour
     }
 
 
+
     void UpdateBalance()
     {
       Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
@@ -621,6 +647,29 @@ public class UIManager : MonoBehaviour
       }
         
     }
-    
+
+    void AddExpensesToList(string expenseName)
+    {
+        if(threeSelections <= 3) 
+        {
+              if (expenseName != "")
+              {
+                 listOfExpenses.Add(expenseName);
+                 listOfExpenses.Add("                   ");
+                 outputTxt = " ";
+              }
+
+              for (int index = 0; index < listOfExpenses.Count; index++)
+ 
+              {
+                outputTxt += listOfExpenses[index].ToString();
+                outputTxt += " ";
+              }
+ 
+              expenseText.text = outputTxt;
+              Output.text = outputTxt;
+        } 
+        
+    }   
 }
 
