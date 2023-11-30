@@ -24,9 +24,10 @@ public class UIManager : MonoBehaviour
     public TMP_Text problemText; //found in Life Happens Scene
 
     public TMP_Text displayBalanceText;
-
     public TMP_Text noCollegeError;
     public static string job = "Job";
+    public static string gross;
+    public TMP_Text gross;
     public int threeSelections = 0;
 
     public List <string> listOfExpenses = new List <string> (); //list of expenses
