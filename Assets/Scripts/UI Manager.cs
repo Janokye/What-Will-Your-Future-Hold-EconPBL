@@ -27,8 +27,13 @@ public class UIManager : MonoBehaviour
     public TMP_Text noCollegeError;
     public static string job = "Job";
     public static string gross;
-    public TMP_Text grossPay;
-    
+    public static float grossNum;
+    public static TMP_Text grossPay;
+
+    public static string net;
+    public static float netNum;
+    public static TMP_Text netPay;
+
 
     public List <string> listOfExpenses = new List <string> (); //list of expenses
    
@@ -153,15 +158,17 @@ public class UIManager : MonoBehaviour
               amoungUsSFX.Play();
           }
       }
+
     }
-
-
 
 
     //=======================================================Jobs=======================================================
     public void OnClickJobNurse()
     {
         job = "Pediatric Nurse";
+        gross = "$77,600";
+        grossNum = 77600.00f;
+        grossPay.text = gross;
         AddToMoney(77600.00f);
         NextButton(); //load next scene
         Debug.Log(5 + -1);
@@ -170,6 +177,9 @@ public class UIManager : MonoBehaviour
     public void OnClickJobElectrician()
     {
         job = "Electrician";
+        gross = "$49,000";
+        grossNum = 49000.00f;
+        grossPay.text = gross;
         AddToMoney(49000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -177,6 +187,9 @@ public class UIManager : MonoBehaviour
     public void OnClickJobStylist()
     {
         job = "Hair Stylist";
+        gross = "$41,000";
+        grossNum = 41000.00f;
+        grossPay.text = gross;
         AddToMoney(41000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -184,6 +197,9 @@ public class UIManager : MonoBehaviour
     public void OnClickJobGameArtist()
     {
         job = "Game Artist";
+        gross = "$60,000";
+        grossNum = 60000.00f;
+        grossPay.text = gross;
         AddToMoney(60000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -191,6 +207,9 @@ public class UIManager : MonoBehaviour
     public void OnClickJobWelder()
     {
         job = "Pipe Welder";
+        gross = "$33,000";
+        grossNum = 33000.00f;
+        grossPay.text = gross;
         AddToMoney(33000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -198,6 +217,9 @@ public class UIManager : MonoBehaviour
     public void OnClickJobPharm()
     {
         job = "Pharmaceutical Scientist";
+        gross = "$110,000";
+        grossNum = 110000.00f;
+        grossPay.text = gross;
         AddToMoney(110000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -211,7 +233,11 @@ public class UIManager : MonoBehaviour
         insurance = 120 * 12;
         float total = (stateTax + insurance);
         AddToMoney(-total);
-        
+
+        netNum = grossNum - total;
+        net = "$"+netNum;
+        netPay.text = net;
+
         buttonClickSFX.Play();
         
 
@@ -223,6 +249,10 @@ public class UIManager : MonoBehaviour
         insurance = 98 * 12;
         float total = stateTax + insurance;
         AddToMoney(-total);
+
+        netNum = grossNum - total;
+        net = "$" + netNum;
+        netPay.text = net;
 
         buttonClickSFX.Play();
 
@@ -236,6 +266,10 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        netNum = grossNum - total;
+        net = "$" + netNum;
+        netPay.text = net;
+
         buttonClickSFX.Play();
 
         NextButton(); //load next scene
@@ -247,6 +281,10 @@ public class UIManager : MonoBehaviour
         insurance = 187 * 12;
         float total = stateTax + insurance;
         AddToMoney(-total);
+
+        netNum = grossNum - total;
+        net = "$" + netNum;
+        netPay.text = net;
 
         buttonClickSFX.Play();
 
@@ -260,6 +298,10 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        netNum = grossNum - total;
+        net = "$" + netNum;
+        netPay.text = net;
+
         buttonClickSFX.Play();
 
         NextButton(); //load next scene
@@ -271,6 +313,10 @@ public class UIManager : MonoBehaviour
         insurance = 151 * 12;
         float total = stateTax + insurance;
         AddToMoney(-total);
+
+        netNum = grossNum - total;
+        net = "$" + netNum;
+        netPay.text = net;
 
         buttonClickSFX.Play();
 
