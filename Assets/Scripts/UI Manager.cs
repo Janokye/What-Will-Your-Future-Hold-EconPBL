@@ -27,8 +27,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text noCollegeError;
     public static string job = "Job";
     public static string gross;
-    public TMP_Text gross;
-    public int threeSelections = 0;
+    public TMP_Text grossPay;
+    
 
     public List <string> listOfExpenses = new List <string> (); //list of expenses
    
@@ -36,13 +36,26 @@ public class UIManager : MonoBehaviour
     public TMP_Text expenseText;
     public string outputTxt;
 
+    public TMP_Text MaxSelectionsNotificationText;
+    public TMP_Text currentTotalText;
+    int discretionarySelections = 0;
+    int totalDiscretionaryCost = 0; 
+
+    //TIMER
+    public float timeRemaining = 10f;
+    public bool timerRunning = false;
+
+    //AUDIO
+    public AudioSource animeWowSFX;
+    public AudioSource amoungUsSFX;
+    public AudioSource buttonClickSFX;
+
     // Start is called before the first frame update
     void Start()
     {
+
       Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
       string currentSceneName = currentScene.name; //get the name of the current scene as a string
-
-
 
       if (currentSceneName != "Main Menu")
       {
@@ -128,6 +141,18 @@ public class UIManager : MonoBehaviour
                         break;
         }
       }
+
+      if (currentSceneName == "Game Over")
+      {
+          if(startingMoney > 0)
+          {
+              animeWowSFX.Play();
+          }
+          else
+          {
+              amoungUsSFX.Play();
+          }
+      }
     }
 
 
@@ -140,42 +165,42 @@ public class UIManager : MonoBehaviour
         AddToMoney(77600.00f);
         NextButton(); //load next scene
         Debug.Log(5 + -1);
-        
+        buttonClickSFX.Play(); 
     }
     public void OnClickJobElectrician()
     {
         job = "Electrician";
         AddToMoney(49000.00f);
         NextButton(); //load next scene
-
+        buttonClickSFX.Play();
     }
     public void OnClickJobStylist()
     {
         job = "Hair Stylist";
         AddToMoney(41000.00f);
         NextButton(); //load next scene
-
+        buttonClickSFX.Play();
     }
     public void OnClickJobGameArtist()
     {
         job = "Game Artist";
         AddToMoney(60000.00f);
         NextButton(); //load next scene
-
+        buttonClickSFX.Play();
     }
     public void OnClickJobWelder()
     {
         job = "Pipe Welder";
         AddToMoney(33000.00f);
         NextButton(); //load next scene
-
+        buttonClickSFX.Play();
     }
     public void OnClickJobPharm()
     {
         job = "Pharmaceutical Scientist";
         AddToMoney(110000.00f);
         NextButton(); //load next scene
-
+        buttonClickSFX.Play();
     }
     //=======================================================Jobs=======================================================
 
@@ -187,7 +212,7 @@ public class UIManager : MonoBehaviour
         float total = (stateTax + insurance);
         AddToMoney(-total);
         
-
+        buttonClickSFX.Play();
         
 
         NextButton(); //load next scene
@@ -199,7 +224,7 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
-       
+        buttonClickSFX.Play();
 
         NextButton(); //load next scene
     }
@@ -211,7 +236,7 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
-        
+        buttonClickSFX.Play();
 
         NextButton(); //load next scene
     }
@@ -223,7 +248,7 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
-        
+        buttonClickSFX.Play();
 
         NextButton(); //load next scene
     }
@@ -235,7 +260,7 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
-        
+        buttonClickSFX.Play();
 
         NextButton(); //load next scene
     }
@@ -247,7 +272,7 @@ public class UIManager : MonoBehaviour
         float total = stateTax + insurance;
         AddToMoney(-total);
 
-        
+        buttonClickSFX.Play();
 
         NextButton(); //load next scene
     }
@@ -256,10 +281,12 @@ public class UIManager : MonoBehaviour
     //=======================================================Choose Housing=======================================================
     public void OnClickBuy()
     {
+        buttonClickSFX.Play();
         SceneManager.LoadScene("Buying");
     }
     public void OnClickRent()
     {
+        buttonClickSFX.Play();
         SceneManager.LoadScene("Renting");
     }
    
@@ -271,7 +298,7 @@ public class UIManager : MonoBehaviour
         {
             AddToMoney(-1900 * 12); //subtract the price of the house per month from their current amount of money
 
-            
+            buttonClickSFX.Play();
 
             SceneManager.LoadScene("Food"); //Load the food scene
         }
@@ -281,7 +308,7 @@ public class UIManager : MonoBehaviour
         {
             AddToMoney(-5000 * 12); //subtract the price of the house per month from their current amount of money
 
-            
+            buttonClickSFX.Play();
 
             SceneManager.LoadScene("Food"); //Load the food scene
         }
@@ -291,7 +318,7 @@ public class UIManager : MonoBehaviour
         {
             AddToMoney(-10000 * 12); //subtract the price of the house per month from their current amount of money
 
-            
+            buttonClickSFX.Play();
 
             SceneManager.LoadScene("Food"); //Load the food scene
         }
@@ -373,12 +400,7 @@ public class UIManager : MonoBehaviour
     //=======================================================Food=========================================================================================
 
     //=======================================================Student Loans=========================================================================================
-    IEnumerator errorEnum()
-    {
-        noCollegeError.text = "Your profession requires you to go to college!";
-        yield return new WaitForSeconds(2.5f);
-        noCollegeError.text = "";
-    }
+    
 
     public void OnClickNCStateButton()
     {
@@ -486,12 +508,12 @@ public class UIManager : MonoBehaviour
     public void OnClickPhoneBill()
     {
         
-        
         int phoneBill = 75 * 12;
         AddToMoney(-phoneBill);
-        threeSelections += 1;
+        discretionarySelections += 1;
 
-        AddExpensesToList("Phone Bill");
+        AddExpensesToList("Phone Bill - $900");
+        CaculateTotalDiscretionaryCosts(phoneBill);
     }
 
     public void OnClickCleaningService()
@@ -499,8 +521,10 @@ public class UIManager : MonoBehaviour
        
         int cleaningBill = 100 * 12;
         AddToMoney(-cleaningBill);
-        threeSelections += 1;
-        AddExpensesToList("Cleaning Service");
+        discretionarySelections += 1;
+
+        AddExpensesToList("Cleaning Service - $1,200");
+        CaculateTotalDiscretionaryCosts(cleaningBill);
     }
 
     public void OnClickGym()
@@ -508,8 +532,10 @@ public class UIManager : MonoBehaviour
         
         int gymBill = 10 * 12;
         AddToMoney(-gymBill);
-        threeSelections += 1;
-        AddExpensesToList("Gym Membership");
+        discretionarySelections += 1;
+        
+        AddExpensesToList("Gym Membership - $120");
+        CaculateTotalDiscretionaryCosts(gymBill);
     }
 
     public void OnClickCableBill()
@@ -517,8 +543,9 @@ public class UIManager : MonoBehaviour
         
         int cableBill = 75 * 12;
         AddToMoney(-cableBill);
-        threeSelections += 1;
-        AddExpensesToList("Cable");
+        discretionarySelections += 1;
+        CaculateTotalDiscretionaryCosts(cableBill);
+        AddExpensesToList("Cable - $900");
     }
 
     public void OnClickPet()
@@ -526,8 +553,9 @@ public class UIManager : MonoBehaviour
         
         int petBill = 50 * 12;
         AddToMoney(-petBill);
-        threeSelections += 1;
-        AddExpensesToList("Pet");
+        discretionarySelections += 1;
+        CaculateTotalDiscretionaryCosts(petBill);
+        AddExpensesToList("Pet - $600");
     }
 
     public void OnClickStreaming()
@@ -535,8 +563,9 @@ public class UIManager : MonoBehaviour
         
         int streamBill = 15 * 12;
         AddToMoney(-streamBill);
-        threeSelections += 1;
-        AddExpensesToList("Streaming Services");
+        discretionarySelections += 1;
+        CaculateTotalDiscretionaryCosts(streamBill);
+        AddExpensesToList("Streaming Services - $180");
     }
 
     public void OnClickInternet()
@@ -544,8 +573,9 @@ public class UIManager : MonoBehaviour
         
         int intBill = 150 * 12;
         AddToMoney(-intBill);
-        threeSelections += 1;
-        AddExpensesToList("Internet");
+        discretionarySelections += 1;
+        CaculateTotalDiscretionaryCosts(intBill);
+        AddExpensesToList("Internet -  $1,800");
     }
 
     public void OnClickLawn()
@@ -553,8 +583,9 @@ public class UIManager : MonoBehaviour
         
         int lawnBill = 200 * 12;
         AddToMoney(-lawnBill);
-        threeSelections += 1;
-        AddExpensesToList("Lawn Service");
+        discretionarySelections += 1;
+        CaculateTotalDiscretionaryCosts(lawnBill);
+        AddExpensesToList("Lawn Service - $2,400");
     }
 
     public void OnClickInvestment()
@@ -562,8 +593,9 @@ public class UIManager : MonoBehaviour
         
         int invBill = 50 * 12;
         AddToMoney(-invBill);
-        threeSelections += 1;
-        AddExpensesToList("Retirement Investment");
+        discretionarySelections += 1;
+        CaculateTotalDiscretionaryCosts(invBill);
+        AddExpensesToList("Retirement Investment - $600" );
     }
 
     
@@ -571,38 +603,64 @@ public class UIManager : MonoBehaviour
 
     //=======================================================Discretionary Expenses=========================================================================================
 
-
-
+   
+    
 
     // Update is called once per frame
     void Update()
     {
-       if(threeSelections == 3)
-       {
-            threeSelections = 0;
-            NextButton();
-       }
+      Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
+      string currentSceneName = currentScene.name; //get the name of the current scene as a string
+
+      if (currentSceneName == "Discretionary Expenses")
+      {
+          MaxSelectionsNotificationText.text = "Choose Up to 5 Discretionary Expenses";
+      }
+       
+      if (discretionarySelections == 5)
+      {
+        timerRunning = true; //enable timer
+
+        if (timerRunning) //if the timer is enabled
+        {
+            if (timeRemaining > 0) //if the time left is more than 0
+            {
+                timeRemaining -= Time.deltaTime; // decrement time by 1
+                int timeRemainingInt = Mathf.FloorToInt(timeRemaining); // convert time remaining float to int
+                MaxSelectionsNotificationText.text = "You have reached 5 Selections...next scene in " + timeRemainingInt + "second(s)"; //update scene title text
+            }
+            else
+            {
+                timerRunning = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1); //switch to next scene in build setting list
+
+            }
+        }
+      }
     }
 
     public void QuitButton() //Quit Button
     {
-        
+        buttonClickSFX.Play();
         Debug.Log("Quit button was clicked"); 
         Application.Quit(); //quit game
     }
 
     public void StartButton() //Start Button - Job Selection Menu
     {
+          buttonClickSFX.Play();
           PlayerPrefs.DeleteAll(); //delete all previous money aquired
           SceneManager.LoadScene("Pick a Job");
     }
     public void NextButton() //Go to next scene
     {
+          buttonClickSFX.Play();
           PlayerPrefs.Save(); // save money balance before switching to next scene
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1); //switch to next scene in build setting list
     }
     public void RestartButton() //Restart Button
     {
+        buttonClickSFX.Play();
         Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
         string currentSceneName = currentScene.name; //get the name of the current scene as a string
 
@@ -611,7 +669,7 @@ public class UIManager : MonoBehaviour
 
     public void HelpButton() //Help Button
     {
-        
+        buttonClickSFX.Play();
         SceneManager.LoadScene("HELP");
     }
 
@@ -619,6 +677,7 @@ public class UIManager : MonoBehaviour
 
     public void AddToMoney(float amount)
     {
+
         float currentAmount = PlayerPrefs.GetFloat("startingMoney",0f); //current amount of money set to 0
         float newAmount = currentAmount + amount; //add amount to current amount to update
 
@@ -628,6 +687,7 @@ public class UIManager : MonoBehaviour
         {
             SceneManager.LoadScene("Game Over"); //...load game over scene
         }
+         
 
         PlayerPrefs.Save();
     }
@@ -651,12 +711,11 @@ public class UIManager : MonoBehaviour
 
     void AddExpensesToList(string expenseName)
     {
-        if(threeSelections <= 3) 
-        {
+        
               if (expenseName != "")
               {
                  listOfExpenses.Add(expenseName);
-                 listOfExpenses.Add("                   ");
+                 listOfExpenses.Add("                                ");
                  outputTxt = " ";
               }
 
@@ -667,10 +726,21 @@ public class UIManager : MonoBehaviour
                 outputTxt += " ";
               }
  
-              expenseText.text = outputTxt;
-              Output.text = outputTxt;
-        } 
-        
+              expenseText.text = outputTxt + "";
+              Output.text = outputTxt; 
     }   
+
+    IEnumerator errorEnum()
+    {
+        noCollegeError.text = "Your profession requires you to go to college!";
+        yield return new WaitForSeconds(2.5f);
+        noCollegeError.text = "";
+    }
+
+    void CaculateTotalDiscretionaryCosts(int amount)
+    {
+        totalDiscretionaryCost += amount;
+        currentTotalText.text = "Total: $" + totalDiscretionaryCost.ToString();
+    }
 }
 
