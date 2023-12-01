@@ -175,7 +175,7 @@ public class UIManager : MonoBehaviour
         gross = "$77,600";
         grossNum = 77600.00f;
 
-        AddToMoney(77600.00f);
+        AddToMoney(77600.00f/12);
         NextButton(); //load next scene
         Debug.Log(5 + -1);
         buttonClickSFX.Play(); 
@@ -185,7 +185,7 @@ public class UIManager : MonoBehaviour
         job = "Electrician";
         gross = "$49,000";
         grossNum = 49000.00f;
-        AddToMoney(49000.00f);
+        AddToMoney(49000.00f / 12);
         NextButton(); //load next scene
         buttonClickSFX.Play();
     }
@@ -194,7 +194,7 @@ public class UIManager : MonoBehaviour
         job = "Hair Stylist";
         gross = "$41,000";
         grossNum = 41000.00f;
-        AddToMoney(41000.00f);
+        AddToMoney(41000.00f / 12);
         NextButton(); //load next scene
         buttonClickSFX.Play();
     }
@@ -203,7 +203,7 @@ public class UIManager : MonoBehaviour
         job = "Game Artist";
         gross = "$60,000";
         grossNum = 60000.00f;
-        AddToMoney(60000.00f);
+        AddToMoney(60000.00f / 12);
         NextButton(); //load next scene
         buttonClickSFX.Play();
     }
@@ -212,7 +212,7 @@ public class UIManager : MonoBehaviour
         job = "Pipe Welder";
         gross = "$33,000";
         grossNum = 33000.00f;
-        AddToMoney(33000.00f);
+        AddToMoney(33000.00f / 12);
         NextButton(); //load next scene
         buttonClickSFX.Play();
     }
@@ -221,7 +221,7 @@ public class UIManager : MonoBehaviour
         job = "Pharmaceutical Scientist";
         gross = "$110,000";
         grossNum = 110000.00f;
-        AddToMoney(110000.00f);
+        AddToMoney(110000.00f / 12);
         NextButton(); //load next scene
         buttonClickSFX.Play();
     }
@@ -231,10 +231,12 @@ public class UIManager : MonoBehaviour
     public void OnClickNC()
     {
         stateTax = startingMoney * 0.058f;
-        insurance = 120 * 12;
+        insurance = 120;
         float total = (stateTax + insurance);
         AddToMoney(-total);
 
+
+        insurance = 120 * 12;
         netNum = grossNum - total;
         net = "$"+netNum;
         
@@ -247,10 +249,11 @@ public class UIManager : MonoBehaviour
     public void OnClickFL()
     {
         stateTax = 0;
-        insurance = 98 * 12;
+        insurance = 98;
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        insurance = 98 * 12;
         netNum = grossNum - total;
         net = "$" + netNum;
 
@@ -262,10 +265,11 @@ public class UIManager : MonoBehaviour
     {
         stateTax = startingMoney * 0.123f;
         startingMoney -= stateTax;
-        insurance = 188 * 12;
+        insurance = 188;
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        insurance = 188 * 12;
         netNum = grossNum - total;
         net = "$" + netNum;
 
@@ -277,10 +281,11 @@ public class UIManager : MonoBehaviour
     {
         stateTax = startingMoney * 0.109f;
         startingMoney -= stateTax;
-        insurance = 187 * 12;
+        insurance = 187;
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        insurance = 187 * 12;
         netNum = grossNum - total;
         net = "$" + netNum;
 
@@ -292,10 +297,11 @@ public class UIManager : MonoBehaviour
     {
         stateTax = startingMoney * 0.0575f;
         startingMoney -= stateTax;
-        insurance = 255 * 12;
+        insurance = 255;
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        insurance = 255 * 12;
         netNum = grossNum - total;
         net = "$" + netNum;
 
@@ -307,10 +313,11 @@ public class UIManager : MonoBehaviour
     {
         stateTax = startingMoney * 0.037f;
         startingMoney -= stateTax;
-        insurance = 151 * 12;
+        insurance = 151;
         float total = stateTax + insurance;
         AddToMoney(-total);
 
+        insurance = 151 * 12;
         netNum = grossNum - total;
         net = "$" + netNum;
 
@@ -338,7 +345,7 @@ public class UIManager : MonoBehaviour
     public void OnClick1bd1baHOUSE()
     {
         {
-            AddToMoney(-1900 * 12); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-1900); //subtract the price of the house per month from their current amount of money
 
             buttonClickSFX.Play();
 
@@ -348,7 +355,7 @@ public class UIManager : MonoBehaviour
     public void OnClick2bd3baHOUSE()
     {
         {
-            AddToMoney(-5000 * 12); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-5000); //subtract the price of the house per month from their current amount of money
 
             buttonClickSFX.Play();
 
@@ -358,7 +365,7 @@ public class UIManager : MonoBehaviour
     public void OnClick5bd6baHOUSE()
     {
         {
-            AddToMoney(-10000 * 12); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-10000); //subtract the price of the house per month from their current amount of money
 
             buttonClickSFX.Play();
 
@@ -372,7 +379,7 @@ public class UIManager : MonoBehaviour
     public void OnClick1bd1baRENTAL()
     {
         {
-            AddToMoney(-1702 * 12); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-1702); //subtract the price of the house per month from their current amount of money
            
             
 
@@ -383,7 +390,7 @@ public class UIManager : MonoBehaviour
     public void OnClick2bd2baRENTAL()
     {
         {
-            AddToMoney(-2000 * 12); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-2000); //subtract the price of the house per month from their current amount of money
 
             
 
@@ -394,7 +401,7 @@ public class UIManager : MonoBehaviour
     public void OnClick5bd6baRENTAL()
     {
         {
-            AddToMoney(-7517 * 12); //subtract the price of the house per month from their current amount of money
+            AddToMoney(-7517); //subtract the price of the house per month from their current amount of money
 
             
              
@@ -409,7 +416,7 @@ public class UIManager : MonoBehaviour
     public void OnClickNeverEatOutButton()
     {
         {
-            AddToMoney(-331.44f * 12f); //subtract expense from current amount of money
+            AddToMoney(-331.44f); //subtract expense from current amount of money
 
             
 
@@ -420,7 +427,7 @@ public class UIManager : MonoBehaviour
     public void OnClickEatOutTwiceButton()
     {
         {
-            AddToMoney(-520 * 12); //subtract expense from current amount of money
+            AddToMoney(-520); //subtract expense from current amount of money
 
             
 
@@ -431,7 +438,7 @@ public class UIManager : MonoBehaviour
     public void OnClickEatOutEverydayButton()
     {
         {
-            AddToMoney(-1400 * 12); //subtract expense from current amount of money
+            AddToMoney(-1400); //subtract expense from current amount of money
 
             
 
@@ -447,7 +454,7 @@ public class UIManager : MonoBehaviour
     public void OnClickNCStateButton()
     {
         {
-            AddToMoney(-267.69f * 12f); //subtract expense from current amount of money
+            AddToMoney(-267.69f); //subtract expense from current amount of money
 
             
 
@@ -458,7 +465,7 @@ public class UIManager : MonoBehaviour
     public void OnClickPennStateButton()
     {
         {
-            AddToMoney(-584.08f * 12f); //subtract expense from current amount of money
+            AddToMoney(-584.08f); //subtract expense from current amount of money
 
             
 
@@ -469,7 +476,7 @@ public class UIManager : MonoBehaviour
     public void OnClickNYUButton()
     {
         {
-            AddToMoney(-1001.65f * 12f); //subtract expense from current amount of money
+            AddToMoney(-1001.65f); //subtract expense from current amount of money
 
             
 
@@ -480,7 +487,7 @@ public class UIManager : MonoBehaviour
     public void OnClickWakeTechButton()
     {
         {
-            AddToMoney(-175.01f * 12f); //subtract expense from current amount of money
+            AddToMoney(-175.01f); //subtract expense from current amount of money
 
             
 
@@ -515,28 +522,28 @@ public class UIManager : MonoBehaviour
 
     public void OnClickPublicTransit()
     {
-        AddToMoney(-75 * 12);
+        AddToMoney(-75);
        
         NextButton();
     }
 
     public void OnClickPrius()
     {
-        AddToMoney(-523 * 12);
+        AddToMoney(-523);
        
         NextButton();
     }
 
     public void OnClickMercedes()
     {
-        AddToMoney(-94.17f * 12f);
+        AddToMoney(-94.17f);
         
         NextButton();
     }
 
     public void OnClickBugatti()
     {
-        AddToMoney(-45000 * 12);
+        AddToMoney(-45000);
        
         NextButton();
     }
@@ -550,7 +557,7 @@ public class UIManager : MonoBehaviour
     public void OnClickPhoneBill()
     {
         
-        int phoneBill = 75 * 12;
+        int phoneBill = 75;
         AddToMoney(-phoneBill);
         discretionarySelections += 1;
 
@@ -561,7 +568,7 @@ public class UIManager : MonoBehaviour
     public void OnClickCleaningService()
     {
        
-        int cleaningBill = 100 * 12;
+        int cleaningBill = 100;
         AddToMoney(-cleaningBill);
         discretionarySelections += 1;
 
@@ -572,7 +579,7 @@ public class UIManager : MonoBehaviour
     public void OnClickGym()
     {
         
-        int gymBill = 10 * 12;
+        int gymBill = 10;
         AddToMoney(-gymBill);
         discretionarySelections += 1;
         
@@ -583,7 +590,7 @@ public class UIManager : MonoBehaviour
     public void OnClickCableBill()
     {
         
-        int cableBill = 75 * 12;
+        int cableBill = 75;
         AddToMoney(-cableBill);
         discretionarySelections += 1;
         CaculateTotalDiscretionaryCosts(cableBill);
@@ -593,7 +600,7 @@ public class UIManager : MonoBehaviour
     public void OnClickPet()
     {
         
-        int petBill = 50 * 12;
+        int petBill = 50;
         AddToMoney(-petBill);
         discretionarySelections += 1;
         CaculateTotalDiscretionaryCosts(petBill);
@@ -603,7 +610,7 @@ public class UIManager : MonoBehaviour
     public void OnClickStreaming()
     {
         
-        int streamBill = 15 * 12;
+        int streamBill = 15;
         AddToMoney(-streamBill);
         discretionarySelections += 1;
         CaculateTotalDiscretionaryCosts(streamBill);
@@ -613,7 +620,7 @@ public class UIManager : MonoBehaviour
     public void OnClickInternet()
     {
         
-        int intBill = 150 * 12;
+        int intBill = 150;
         AddToMoney(-intBill);
         discretionarySelections += 1;
         CaculateTotalDiscretionaryCosts(intBill);
@@ -623,7 +630,7 @@ public class UIManager : MonoBehaviour
     public void OnClickLawn()
     {
         
-        int lawnBill = 200 * 12;
+        int lawnBill = 200;
         AddToMoney(-lawnBill);
         discretionarySelections += 1;
         CaculateTotalDiscretionaryCosts(lawnBill);
@@ -633,7 +640,7 @@ public class UIManager : MonoBehaviour
     public void OnClickInvestment()
     {
         
-        int invBill = 50 * 12;
+        int invBill = 50;
         AddToMoney(-invBill);
         discretionarySelections += 1;
         CaculateTotalDiscretionaryCosts(invBill);
