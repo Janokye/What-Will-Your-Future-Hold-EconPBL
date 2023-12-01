@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 323112652}
   - component: {fileID: 323112651}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: net
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,6 +1135,8 @@ MonoBehaviour:
   problemText: {fileID: 0}
   displayBalanceText: {fileID: 1019076888}
   noCollegeError: {fileID: 0}
+  grossPay: {fileID: 1931962933}
+  netPay: {fileID: 323112651}
   listOfExpenses: []
   Output: {fileID: 0}
   expenseText: {fileID: 0}

@@ -28,11 +28,11 @@ public class UIManager : MonoBehaviour
     public static string job = "Job";
     public static string gross;
     public static float grossNum;
-    public static TMP_Text grossPay;
+    public TMP_Text grossPay;
 
     public static string net;
     public static float netNum;
-    public static TMP_Text netPay;
+    public TMP_Text netPay;
 
 
     public List <string> listOfExpenses = new List <string> (); //list of expenses
@@ -71,15 +71,18 @@ public class UIManager : MonoBehaviour
         }
       }
 
+
+
       UpdateBalance();              // update amount
-      
+
+
 
       if (currentSceneName == "Life Happens" ) //if the current scene is Life Happens...
       {
                 
-        int randomNum = Random.Range(1,11); //generate a random number btwn 1 and 11
+          int randomNum = Random.Range(1,11); //generate a random number btwn 1 and 11
 
-        switch(randomNum)
+          switch(randomNum)
         {
                         case(1):
                         lifeHappensTitleText.text = "Oh No!";
@@ -149,7 +152,10 @@ public class UIManager : MonoBehaviour
 
       if (currentSceneName == "Game Over")
       {
-          if(startingMoney > 0)
+            grossPay.text = gross;
+            netPay.text = net;
+
+            if (startingMoney > 0)
           {
               animeWowSFX.Play();
           }
@@ -159,8 +165,8 @@ public class UIManager : MonoBehaviour
           }
       }
 
-    }
 
+    }
 
     //=======================================================Jobs=======================================================
     public void OnClickJobNurse()
@@ -168,7 +174,7 @@ public class UIManager : MonoBehaviour
         job = "Pediatric Nurse";
         gross = "$77,600";
         grossNum = 77600.00f;
-        grossPay.text = gross;
+
         AddToMoney(77600.00f);
         NextButton(); //load next scene
         Debug.Log(5 + -1);
@@ -179,7 +185,6 @@ public class UIManager : MonoBehaviour
         job = "Electrician";
         gross = "$49,000";
         grossNum = 49000.00f;
-        grossPay.text = gross;
         AddToMoney(49000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -189,7 +194,6 @@ public class UIManager : MonoBehaviour
         job = "Hair Stylist";
         gross = "$41,000";
         grossNum = 41000.00f;
-        grossPay.text = gross;
         AddToMoney(41000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -199,7 +203,6 @@ public class UIManager : MonoBehaviour
         job = "Game Artist";
         gross = "$60,000";
         grossNum = 60000.00f;
-        grossPay.text = gross;
         AddToMoney(60000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -209,7 +212,6 @@ public class UIManager : MonoBehaviour
         job = "Pipe Welder";
         gross = "$33,000";
         grossNum = 33000.00f;
-        grossPay.text = gross;
         AddToMoney(33000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -219,7 +221,6 @@ public class UIManager : MonoBehaviour
         job = "Pharmaceutical Scientist";
         gross = "$110,000";
         grossNum = 110000.00f;
-        grossPay.text = gross;
         AddToMoney(110000.00f);
         NextButton(); //load next scene
         buttonClickSFX.Play();
@@ -236,7 +237,7 @@ public class UIManager : MonoBehaviour
 
         netNum = grossNum - total;
         net = "$"+netNum;
-        netPay.text = net;
+        
 
         buttonClickSFX.Play();
         
@@ -252,7 +253,6 @@ public class UIManager : MonoBehaviour
 
         netNum = grossNum - total;
         net = "$" + netNum;
-        netPay.text = net;
 
         buttonClickSFX.Play();
 
@@ -268,7 +268,6 @@ public class UIManager : MonoBehaviour
 
         netNum = grossNum - total;
         net = "$" + netNum;
-        netPay.text = net;
 
         buttonClickSFX.Play();
 
@@ -284,7 +283,6 @@ public class UIManager : MonoBehaviour
 
         netNum = grossNum - total;
         net = "$" + netNum;
-        netPay.text = net;
 
         buttonClickSFX.Play();
 
@@ -300,7 +298,6 @@ public class UIManager : MonoBehaviour
 
         netNum = grossNum - total;
         net = "$" + netNum;
-        netPay.text = net;
 
         buttonClickSFX.Play();
 
@@ -316,7 +313,6 @@ public class UIManager : MonoBehaviour
 
         netNum = grossNum - total;
         net = "$" + netNum;
-        netPay.text = net;
 
         buttonClickSFX.Play();
 
