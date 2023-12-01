@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class UIManager : MonoBehaviour
 {
+
+    //format for numbers
+    int numOfDecimals = 2;
     
     public float startingMoney = 0f; //Changed it to 2 separate variables for the meantime
     
@@ -43,7 +47,7 @@ public class UIManager : MonoBehaviour
 
     public TMP_Text MaxSelectionsNotificationText;
     public TMP_Text currentTotalText;
-    int discretionarySelections = 0;
+    static int discretionarySelections = 0;
     int totalDiscretionaryCost = 0; 
 
     //TIMER
@@ -80,7 +84,7 @@ public class UIManager : MonoBehaviour
       if (currentSceneName == "Life Happens" ) //if the current scene is Life Happens...
       {
                 
-          int randomNum = Random.Range(1,11); //generate a random number btwn 1 and 11
+          int randomNum = UnityEngine.Random.Range(1,11); //generate a random number btwn 1 and 11
 
           switch(randomNum)
         {
@@ -750,7 +754,9 @@ public class UIManager : MonoBehaviour
       if (currentSceneName != "Main Menu")
       {
         if (currentSceneName != "HELP")
-        {    
+        {
+
+                startingMoney = Mathf.Round(startingMoney * Mathf.Pow(10, numOfDecimals)) / Mathf.Pow(10, numOfDecimals);
          displayBalanceText.text = "Your Current Balance is: $" + startingMoney.ToString();
           
         }

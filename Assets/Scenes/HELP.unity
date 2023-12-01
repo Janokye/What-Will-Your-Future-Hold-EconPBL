@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -496,6 +496,7 @@ MonoBehaviour:
   displayBalanceText: {fileID: 0}
   noCollegeError: {fileID: 0}
   grossPay: {fileID: 0}
+  netPay: {fileID: 0}
   listOfExpenses: []
   Output: {fileID: 0}
   expenseText: {fileID: 0}
@@ -1437,7 +1438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 489, y: -68}
+  m_AnchoredPosition: {x: 647, y: -68}
   m_SizeDelta: {x: 544.5455, y: 70.0063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502440702
@@ -1460,7 +1461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: How to Play
+  m_text: Info
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
@@ -1523,7 +1524,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 481.42273, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1594,10 +1595,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In this game you''ll choose a job and different aspects of your life to
-    see the differences between your gross pay and net pay factoring your expenses!
-
-'
+  m_text: Gross pay is your total earnings before any deductions. Your net pay is
+    your earnings after taxes and other deductions. In this game you'll see the difference
+    between each and learn how to make good decisions based on those finances.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
   m_sharedMaterial: {fileID: 628722877415010214, guid: 6e4191344c4e5f24390fac7c3b42ccc7, type: 2}
@@ -1660,7 +1660,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -105.012764}
+  m_margin: {x: -32.421417, y: -28.941856, z: -23.966034, w: -105.012764}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
