@@ -735,11 +735,6 @@ public class UIManager : MonoBehaviour
         float newAmount = currentAmount + amount; //add amount to current amount to update
 
         PlayerPrefs.SetFloat("startingMoney", newAmount); //save the most updated balance to player prefs
-
-        if (newAmount <= 0)
-        {
-            SceneManager.LoadScene("Game Over"); //...load game over scene
-        }
          
 
         PlayerPrefs.Save();
