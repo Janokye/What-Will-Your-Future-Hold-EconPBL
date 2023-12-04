@@ -714,10 +714,8 @@ public class UIManager : MonoBehaviour
     public void RestartButton() //Restart Button
     {
         buttonClickSFX.Play();
-        Scene currentScene = SceneManager.GetActiveScene(); //get current scene 
-        string currentSceneName = currentScene.name; //get the name of the current scene as a string
-
-        SceneManager.LoadScene(currentSceneName); //load the current scene
+        PlayerPrefs.DeleteAll(); //delete all previous money aquired
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void HelpButton() //Help Button
